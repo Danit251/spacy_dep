@@ -139,8 +139,9 @@ def pipeline(train_path, model_name, n_epochs):
                     print(error)
             # for text, annotations in TRAIN_DATA:
             #     nlp.update([text], [annotations], sgd=optimizer, losses=losses)
-            print(f'Loss in epoch {i} is {losses["parser"]}')
+            print(f'Loss in epoch {i+1} is {losses["parser"]}')
         print("Training is done!")
+        parser.to_disk("models/trained_parser")
 
 
 def main(args):
